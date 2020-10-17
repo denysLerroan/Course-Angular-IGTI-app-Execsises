@@ -1,7 +1,18 @@
 <div>04</div>
-<div>Exercício 1/4: Abdominal, repetição 2/3</div>
+<div>
+  Exercício: {{ currentEx + 1 }}/{{ this.exercises.length }}:
+  {{ this.exercises[this.currentEx].name }}
+</div>
+<div>
+  Repetição: {{ currentRep + 1 }}/{{
+    this.exercises[this.currentEx].repetitions
+  }}
+</div>
+<div>Fase: {{ formatPhase(phase) }}</div>
+
 <div>
   <button>Iniciar</button>
   <button>Pausar</button>
-  <button>Reiniciar</button>
+  <button (click)="restart()">Reiniciar</button>
+  <button (click)="next()">Próximo</button>
 </div>
