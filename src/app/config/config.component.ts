@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Exercise } from '../exercise';
 
 @Component({
@@ -7,7 +7,7 @@ import { Exercise } from '../exercise';
   styleUrls: ['./config.component.css'],
 })
 export class ConfigComponent {
-  exercises: Exercise[] = [];
+  @Input() exercises: Exercise[] = [];
 
   exercise: Exercise = {
     name: '',
