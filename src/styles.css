@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  background-color: rgba(238, 238, 238, 0.911);
+  color: rgb(0, 0, 0);
+}
+
+button {
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

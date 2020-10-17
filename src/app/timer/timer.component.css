@@ -1,0 +1,15 @@
+.panel {
+  font-size: 1.6em;
+}
+
+button {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.timer {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: rgb(253, 0, 0);
+}

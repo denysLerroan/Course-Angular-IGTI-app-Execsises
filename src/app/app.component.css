@@ -1,0 +1,16 @@
+:host {
+  display: inline-block;
+  border: 1px solid black;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  padding: 10px 10px 20px 10px;
+  border-radius: 20px;
+  min-width: 500px;
+}
+
+button {
+  margin-bottom: 20px;
+}

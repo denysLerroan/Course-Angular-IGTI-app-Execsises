@@ -1,14 +1,16 @@
-<div>{{ formatTimeLeft(timeLeft) }}</div>
-<div>
-  Exercício: {{ currentEx + 1 }}/{{ this.exercises.length }}:
-  {{ this.exercises[this.currentEx].name }}
+<div class="panel">
+  <div class="timer">{{ formatTimeLeft(timeLeft) }}</div>
+  <div>
+    Exercício: {{ currentEx + 1 }}/{{ this.exercises.length }}:
+    {{ this.exercises[this.currentEx].name }}
+  </div>
+  <div>
+    Repetição: {{ currentRep + 1 }}/{{
+      this.exercises[this.currentEx].repetitions
+    }}
+  </div>
+  <div>Fase: {{ formatPhase(phase) }}</div>
 </div>
-<div>
-  Repetição: {{ currentRep + 1 }}/{{
-    this.exercises[this.currentEx].repetitions
-  }}
-</div>
-<div>Fase: {{ formatPhase(phase) }}</div>
 
 <div>
   <button (click)="start()">Iniciar</button>
