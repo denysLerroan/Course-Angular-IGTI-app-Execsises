@@ -1,15 +1,15 @@
 <div class="panel">
-  <div class="timer">{{ timeLeft / 10 | number: "1.1-1" }}</div>
+  <div class="timer">{{ ts.timeLeft / 10 | number: "1.1-1" }}</div>
   <div>
-    Exercício: {{ currentEx + 1 }}/{{ this.exercises.length }}:
-    {{ this.exercises[this.currentEx].name }}
+    Exercício: {{ ts.currentEx + 1 }}/{{ ts.exercises.length }}:
+    {{ ts.exercises[ts.currentEx].name }}
   </div>
   <div>
-    Repetição: {{ currentRep + 1 }}/{{
-      this.exercises[this.currentEx].repetitions
+    Repetição: {{ ts.currentRep + 1 }}/{{
+      ts.exercises[ts.currentEx].repetitions
     }}
   </div>
-  <div>Fase: {{ formatPhase(phase) }}</div>
+  <div>Fase: {{ formatPhase(ts.phase) }}</div>
 </div>
 
 <div>
