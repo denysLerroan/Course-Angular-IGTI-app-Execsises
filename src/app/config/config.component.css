@@ -25,3 +25,7 @@ td {
 th:last-child {
   border: none;
 }
+
+button:disabled {
+  background-color: rgba(0, 0, 0, 0.109);
+}

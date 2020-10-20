@@ -1,6 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { Exercise } from '../exercise';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TimerService } from '../timer.service';
+
+const defaultValue = {
+  name: '',
+  duration: 30,
+  repetitions: 3,
+  warmUp: 15,
+  rest: 30,
+};
 
 @Component({
   selector: 'app-config',
@@ -8,19 +16,20 @@ import { TimerService } from '../timer.service';
   styleUrls: ['./config.component.css'],
 })
 export class ConfigComponent {
-  exercise: Exercise = {
-    name: '',
-    duration: 30,
-    repetitions: 3,
-    warmUp: 15,
-    rest: 30,
-  };
+  exerciseForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    duration: new FormControl(30, Validators.required),
+    repetitions: new FormControl(3, Validators.required),
+    warmUp: new FormControl(15, Validators.required),
+    rest: new FormControl(30, Validators.required),
+  });
 
   constructor(public ts: TimerService) {}
 
   add() {
-    this.ts.add(this.exercise);
-    this.exercise = { ...this.exercise, name: '' };
+    const exercise = this.exerciseForm.value;
+    this.ts.add(exercise);
+    this.exerciseForm.reset({ ...exercise, name: '' });
   }
 
   delete(i: number) {
