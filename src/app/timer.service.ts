@@ -68,4 +68,11 @@ export class TimerService {
         return ex.rest * 10;
     }
   }
+  add(exercise: Exercise) {
+    this.exercises.push(exercise);
+  }
+
+  delete(i: number) {
+    this.exercises.splice(i, 1);
+  }
 }

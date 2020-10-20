@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Exercise } from '../exercise';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-config',
@@ -7,8 +8,6 @@ import { Exercise } from '../exercise';
   styleUrls: ['./config.component.css'],
 })
 export class ConfigComponent {
-  @Input() exercises: Exercise[] = [];
-
   exercise: Exercise = {
     name: '',
     duration: 30,
@@ -17,14 +16,14 @@ export class ConfigComponent {
     rest: 30,
   };
 
-  constructor() {}
+  constructor(public ts: TimerService) {}
 
   add() {
-    this.exercises.push(this.exercise);
+    this.ts.add(this.exercise);
     this.exercise = { ...this.exercise, name: '' };
   }
 
   delete(i: number) {
-    this.exercises.splice(i, 1);
+    this.ts.delete(i);
   }
 }
