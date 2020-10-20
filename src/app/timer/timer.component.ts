@@ -32,8 +32,12 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   start() {
     if (!this.interval) {
+      let lastTime = Date.now();
       this.interval = setInterval(() => {
-        this.ts.decrementTimeLeft();
+        let currentTime = Date.now();
+        let ellapsedTime = currentTime - lastTime;
+        lastTime = currentTime;
+        this.ts.decrementTimeLeft(ellapsedTime);
       }, 100);
     }
   }
