@@ -1,6 +1,25 @@
 .panel {
   font-size: 1.2em;
 }
+.panel div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.panel input {
+  text-align: center;
+  font-size: 1.2em;
+  color: red;
+  font-weight: bold;
+}
+.panel label {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
 
 table {
   font-size: 1.6em;
