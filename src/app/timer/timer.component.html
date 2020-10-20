@@ -1,5 +1,5 @@
 <div class="panel">
-  <div class="timer">{{ formatTimeLeft(timeLeft) }}</div>
+  <div class="timer">{{ timeLeft / 10 | number: "1.1-1" }}</div>
   <div>
     Exercício: {{ currentEx + 1 }}/{{ this.exercises.length }}:
     {{ this.exercises[this.currentEx].name }}

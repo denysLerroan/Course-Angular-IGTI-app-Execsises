@@ -24,10 +24,6 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.pause();
   }
 
-  formatTimeLeft(time: number) {
-    return (time / 10).toString();
-  }
-
   formatPhase(phase: number) {
     switch (phase) {
       case 0:
